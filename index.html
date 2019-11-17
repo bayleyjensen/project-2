@@ -13,11 +13,61 @@
     <link rel="stylesheet" href="style.css" />
     <title>Project 2</title>
   </head>
-  <body>
+  <body onload="startInterval();">
     <header>
       <div class="container">
         <div class="row">
-          <div class="col"></div>
+          <div class="col">
+            <h1>Gone Fishin</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <button>
+              <img
+                id="fishingPole"
+                class="btn"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT1SuP65mpEhDj_wEWOizhm9WCQgTSNAGoIGdJOHmBKgkgcHmM&s"
+                alt="fishing pole"
+                onclick="cast()"
+              />
+            </button>
+          </div>
+          <div class="col-12 col-md-6">
+            <h1>Lunkers:<span id="count"></span></h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button
+              id="fishingPoleUpgrade"
+              class="btn-success"
+              onclick="buyPole()"
+            >
+              Upgrade Pole = <span id="polePrice"></span>
+            </button>
+            <button
+              id="betterBaitUpgrade"
+              class="btn-success"
+              onclick="buyBait()"
+            >
+              Better Bait = <span id="baitPrice"></span>
+            </button>
+            <button id="netUpgrade" class="btn-success" onclick="buyNet()">
+              Net = <span id="netPrice"></span>
+            </button>
+            <button id="boatUpgrade" class="btn-success" onclick="buyBoat()">
+              Boat = <span id="boatPrice"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h3>pole upgrades <span id="fishingPoleUpgrades"></span></h3>
+          <h3>Bait Upgrades <span id="baitUpgrades"></span></h3>
+          <h3>Nets <span id="netUpgrades"></span></h3>
+          <h3>boats <span id="boatUpgrades"></span></h3>
         </div>
       </div>
     </header>
