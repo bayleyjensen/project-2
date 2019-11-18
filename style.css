@@ -1,5 +1,28 @@
-#cooper {
-  height: 100vh;
-background: url('https://media0.giphy.com/media/nTVsJYBOVs8tG/giphy.gif') 
-background-size: cover;
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: url("https://media0.giphy.com/media/nTVsJYBOVs8tG/giphy.gif");
+  background-size: cover;
+  text-align: center;
+}
+
+main {
+  flex-grow: 2;
+}
+
+.white {
+  color: aliceblue;
+}
+.list {
+  text-align: center;
+  box-shadow: green;
+}
+.btn-success {
+  margin-top: 3em;
+  border: groove;
+  border-color: lawngreen;
+}
+.picture {
+  background-color: none;
 }

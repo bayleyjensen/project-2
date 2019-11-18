@@ -16,9 +16,9 @@
   <body onload="startInterval();">
     <header>
       <div class="container">
-        <div class="row">
+        <div class="row" style="padding-top: 1em;">
           <div class="col">
-            <h1>Gone Fishin</h1>
+            <h1 class="white">Gone Fishin</h1>
           </div>
         </div>
         <div class="row">
@@ -26,15 +26,15 @@
             <button>
               <img
                 id="fishingPole"
-                class="btn"
+                class="btn picture"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT1SuP65mpEhDj_wEWOizhm9WCQgTSNAGoIGdJOHmBKgkgcHmM&s"
                 alt="fishing pole"
                 onclick="cast()"
               />
             </button>
           </div>
-          <div class="col-12 col-md-6">
-            <h1>Lunkers:<span id="count"></span></h1>
+          <div class="col-12 col-md-6 white">
+            <h1 style="padding-left: 3em;">Lunkers:<span id="count"></span></h1>
           </div>
         </div>
         <div class="row">
@@ -44,30 +44,42 @@
               class="btn-success"
               onclick="buyPole()"
             >
-              Upgrade Pole = <span id="polePrice"></span>
+              Upgrade Pole =- <span id="polePrice"></span>
             </button>
             <button
               id="betterBaitUpgrade"
               class="btn-success"
               onclick="buyBait()"
             >
-              Better Bait = <span id="baitPrice"></span>
+              Better Bait =- <span id="baitPrice"></span>
             </button>
             <button id="netUpgrade" class="btn-success" onclick="buyNet()">
-              Net = <span id="netPrice"></span>
+              Net =- <span id="netPrice"></span>
             </button>
             <button id="boatUpgrade" class="btn-success" onclick="buyBoat()">
-              Boat = <span id="boatPrice"></span>
+              Boat =- <span id="boatPrice"></span>
             </button>
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row ">
         <div class="col">
-          <h3>pole upgrades <span id="fishingPoleUpgrades"></span></h3>
-          <h3>Bait Upgrades <span id="baitUpgrades"></span></h3>
-          <h3>Nets <span id="netUpgrades"></span></h3>
-          <h3>boats <span id="boatUpgrades"></span></h3>
+          <h3 class="white">
+            pole upgrades <span id="fishingPoleUpgrades"></span
+            ><span> + 2 lunkers per click</span>
+          </h3>
+          <h3 class="white">
+            Bait Upgrades <span id="baitUpgrades"></span
+            ><span> + 5 lunkers per click</span>
+          </h3>
+          <h3 class="white">
+            Nets <span id="netUpgrades"></span
+            ><span> X 25 lunkers per 3 sec</span>
+          </h3>
+          <h3 class="white">
+            boats <span id="boatUpgrades"></span
+            ><span>X 100 lunkers per 3 sec</span>
+          </h3>
         </div>
       </div>
     </header>

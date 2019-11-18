@@ -19,12 +19,12 @@ let autoUpgrades = {
   net: {
     price: 50,
     quantity: 0,
-    multiplier: 2
+    multiplier: 25
   },
   boat: {
     price: 200,
     quantity: 0,
-    multiplier: 2
+    multiplier: 100
   }
 };
 
@@ -37,6 +37,7 @@ let polePrice = document.querySelector("#polePrice");
 let baitPrice = document.querySelector("#baitPrice");
 let netPrice = document.querySelector("#netPrice");
 let boatPrice = document.querySelector("#boatPrice");
+let poleBTN = document.querySelector("#fisingPoleUpgrade");
 
 function cast() {
   fish.lunkersCaught++;
@@ -58,13 +59,15 @@ function update() {
   baitPrice.innerText = clickUpgrades.bait.price;
   netPrice.innerText = autoUpgrades.net.price;
   boatPrice.innerText = autoUpgrades.boat.price;
-  if (fish.lunkersCaught < clickUpgrades.fishingPole.price) {
-    // TODO  MAKE BUTTON DISABLED.btn.setAttribute("disabled", "true");
+  if (fish.lunkersCaught < clickUpgrades.fishingPole.price)
+    poleBTN.setAttribute("disabled", "true");
+  else {
+    poleBTN.removeAttribute("disabled");
   }
 }
 
 function buyPole() {
-  if (fish.lunkersCaught > 2) {
+  if (fish.lunkersCaught >= clickUpgrades.fishingPole.price) {
     fish.lunkersCaught -= clickUpgrades.fishingPole.price;
     clickUpgrades.fishingPole.quantity += 1;
     clickUpgrades.fishingPole.price *= 5;
@@ -73,8 +76,9 @@ function buyPole() {
 }
 
 function buyBait() {
-  if (fish.lunkersCaught > 5) {
-    fish.lunkersCaught -= 10;
+  if (fish.lunkersCaught >= clickUpgrades.bait.price) {
+    fish.lunkersCaught -= clickUpgrades.bait.price;
+    clickUpgrades.bait.price;
     clickUpgrades.bait.quantity += 1;
     clickUpgrades.bait.price *= 5;
   }
@@ -82,8 +86,8 @@ function buyBait() {
 }
 
 function buyNet() {
-  if (fish.lunkersCaught > 5) {
-    fish.lunkersCaught += 10;
+  if (fish.lunkersCaught >= autoUpgrades.net.price) {
+    fish.lunkersCaught -= autoUpgrades.net.price;
     autoUpgrades.net.quantity += 1;
     autoUpgrades.net.price *= 5;
   }
@@ -91,8 +95,8 @@ function buyNet() {
 }
 
 function buyBoat() {
-  if (fish.lunkersCaught > 5) {
-    fish.lunkersCaught += 10;
+  if (fish.lunkersCaught >= autoUpgrades.boat.price) {
+    fish.lunkersCaught -= autoUpgrades.boat.price;
     autoUpgrades.boat.quantity += 1;
     autoUpgrades.boat.price *= 5;
   }
@@ -107,6 +111,6 @@ function collectAutoUpgrades() {
 }
 
 function startInterval() {
-  setInterval(collectAutoUpgrades, 30);
+  setInterval(collectAutoUpgrades, 3000);
   update();
 }
