@@ -77,7 +77,7 @@ function update() {
   else {
     netBTN.removeAttribute("disabled");
   }
-  if (fish.lunkersCaught < autoUpgrades.net.price)
+  if (fish.lunkersCaught < autoUpgrades.boat.price)
     boatBTN.setAttribute("disabled", "true");
   else {
     boatBTN.removeAttribute("disabled");
