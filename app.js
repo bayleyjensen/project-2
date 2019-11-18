@@ -37,7 +37,7 @@ let polePrice = document.querySelector("#polePrice");
 let baitPrice = document.querySelector("#baitPrice");
 let netPrice = document.querySelector("#netPrice");
 let boatPrice = document.querySelector("#boatPrice");
-let poleBTN = document.querySelector("#fisingPoleUpgrade");
+let poleBTN = document.querySelector("#fishingPoleUpgrade");
 
 function cast() {
   fish.lunkersCaught++;
