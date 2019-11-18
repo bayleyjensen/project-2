@@ -38,6 +38,9 @@ let baitPrice = document.querySelector("#baitPrice");
 let netPrice = document.querySelector("#netPrice");
 let boatPrice = document.querySelector("#boatPrice");
 let poleBTN = document.querySelector("#fishingPoleUpgrade");
+let baitBTN = document.querySelector("#betterBaitUpgrade");
+let netBTN = document.querySelector("#netUpgrade");
+let boatBTN = document.querySelector("#boatUpgrade");
 
 function cast() {
   fish.lunkersCaught++;
@@ -63,6 +66,21 @@ function update() {
     poleBTN.setAttribute("disabled", "true");
   else {
     poleBTN.removeAttribute("disabled");
+  }
+  if (fish.lunkersCaught < clickUpgrades.bait.price)
+    baitBTN.setAttribute("disabled", "true");
+  else {
+    baitBTN.removeAttribute("disabled");
+  }
+  if (fish.lunkersCaught < autoUpgrades.net.price)
+    netBTN.setAttribute("disabled", "true");
+  else {
+    netBTN.removeAttribute("disabled");
+  }
+  if (fish.lunkersCaught < autoUpgrades.net.price)
+    boatBTN.setAttribute("disabled", "true");
+  else {
+    boatBTN.removeAttribute("disabled");
   }
 }
 
